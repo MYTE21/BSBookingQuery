@@ -11,7 +11,7 @@ namespace BSBookingQuery.Models
         public string Description { get; set; }
 
         // public int HotelId { get; set; }
-        [ForeignKey("HotelId")]
+        // [ForeignKey("HotelId")]
         public int HotelId { get; set; }
         public Hotel Hotel { get; set; }
     }

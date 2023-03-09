@@ -280,7 +280,7 @@ namespace BSBookingQuery.Data.Migrations
             modelBuilder.Entity("BSBookingQuery.Models.Comment", b =>
                 {
                     b.HasOne("BSBookingQuery.Models.Hotel", "Hotel")
-                        .WithMany("Comments")
+                        .WithMany()
                         .HasForeignKey("HotelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -337,11 +337,6 @@ namespace BSBookingQuery.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("BSBookingQuery.Models.Hotel", b =>
-                {
-                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }
