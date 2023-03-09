@@ -25,6 +25,18 @@ namespace BSBookingQuery.Controllers
               return View(await _context.Hotel.ToListAsync());
         }
 
+        // GET: Hotels/SearchHotel
+        public async Task<IActionResult> SearchHotel()
+        {
+            return View();
+        }
+
+        // POST: Hotels/ShowHotelSearchResults
+        public async Task<IActionResult> ShowHotelSearchResults(String SearchPhrase)
+        {
+            return View("Index", await _context.Hotel.Where(j => j.HotelName.Contains(SearchPhrase)).ToListAsync());
+        }
+
         // GET: Hotels/Details/5
         public async Task<IActionResult> Details(int? id)
         {
