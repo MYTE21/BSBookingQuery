@@ -32,8 +32,26 @@ namespace BSBookingQuery.Controllers
             return View();
         }
 
+        // GET: Hotels/SearchComments
+        public async Task<IActionResult> SearchComments()
+        {
+            return View();
+        }
+
         // POST: Hotels/ShowHotelSearchResults
-        public async Task<IActionResult> ShowHotelSearchResults(String SelectedField, String SearchPhrase)
+        public async Task<IActionResult> SearchCommentsResults(String SearchPhrase)
+        {
+            int X = int.Parse(SearchPhrase);
+            var hotel_Id = await _context.Hotel.Where(j => j.Id.Equals(SearchPhrase)).ToListAsync();
+            if (hotel_Id != null)
+            {
+                return View("Index", await _context.Comment.Where(j => j.HotelId.Equals(X)).ToListAsync());
+            }
+            return View(await _context.Comment.ToListAsync());
+        }
+
+            // POST: Hotels/ShowHotelSearchResults
+            public async Task<IActionResult> ShowHotelSearchResults(String SelectedField, String SearchPhrase)
         {
             if (SelectedField == "Id") {
                 int X = int.Parse(SearchPhrase);
