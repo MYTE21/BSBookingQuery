@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BSBookingQuery.Data;
 using BSBookingQuery.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BSBookingQuery.Controllers
 {
@@ -69,6 +70,7 @@ namespace BSBookingQuery.Controllers
         }
 
         // GET: Hotels/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
