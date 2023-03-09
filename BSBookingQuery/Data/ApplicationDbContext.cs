@@ -11,7 +11,5 @@ namespace BSBookingQuery.Data
         {
         }
         public DbSet<BSBookingQuery.Models.Hotel> Hotel { get; set; }
-
-        // public DbSet<e> entities { get; set; }
     }
 }
