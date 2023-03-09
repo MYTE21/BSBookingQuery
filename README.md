@@ -11,3 +11,11 @@ Technical Completion:
 2. Implemented Design Patterns - MVC and follow code principles
 3. Used ORM
 4. Used Entity Framework Core for MSSQL
+
+Database Migration and Updating:
+```cmd
+add-migration MigrationMessage
+```
+```cmd
+update-database
+```
