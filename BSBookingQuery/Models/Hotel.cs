@@ -19,6 +19,8 @@ namespace BSBookingQuery.Models
         [Range(0, 7)]
         public int HotelRating { get; set;}
 
+        public ICollection<Comment> Comments { get; set; }
+
 
         public Hotel()
         {

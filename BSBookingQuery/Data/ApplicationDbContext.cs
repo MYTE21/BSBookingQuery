@@ -11,5 +11,6 @@ namespace BSBookingQuery.Data
         {
         }
         public DbSet<BSBookingQuery.Models.Hotel> Hotel { get; set; }
+        public DbSet<BSBookingQuery.Models.Comment> Comment { get; set; }
     }
 }
