@@ -22,9 +22,15 @@ namespace BSBookingQuery.Controllers
         // GET: Comments
         public async Task<IActionResult> Index()
         {
-            // var applicationDbContext = _context.Comment.Include(c => c.Hotel);
-            // return View(await applicationDbContext.ToListAsync());
-            return View(await _context.Comment.ToListAsync());
+            var applicationDbContext = _context.Comment.Include(c => c.Hotel);
+            return View(await applicationDbContext.ToListAsync());
+        }
+
+        // GET: Comments/SearchComments
+        public async Task<IActionResult> SearchComments()
+        {
+            var applicationDbContext = _context.Comment.Include(c => c.Hotel);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Comments/Details/5
