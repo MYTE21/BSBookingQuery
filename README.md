@@ -9,3 +9,4 @@ Technical Completion:
 1. Used latest technologies of Dot.Net Core and MSSql
 2. Implemented Design Patterns - MVC and follow code principles
 3. Used ORM
+4. Used Entity Framework Core for MSSQL
