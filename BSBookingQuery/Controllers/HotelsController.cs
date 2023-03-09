@@ -32,8 +32,21 @@ namespace BSBookingQuery.Controllers
         }
 
         // POST: Hotels/ShowHotelSearchResults
-        public async Task<IActionResult> ShowHotelSearchResults(String SearchPhrase)
+        public async Task<IActionResult> ShowHotelSearchResults(String SelectedField, String SearchPhrase)
         {
+            if (SelectedField == "Id") {
+                int X = int.Parse(SearchPhrase);
+                return View("Index", await _context.Hotel.Where(j => j.Id.Equals(X)).ToListAsync());
+            }
+            else if (SelectedField == "HotelLocation")
+            {
+                return View("Index", await _context.Hotel.Where(j => j.HotelLocation.Contains(SearchPhrase)).ToListAsync());
+            }
+            else if (SelectedField == "HotelRating")
+            {
+                int X = int.Parse(SearchPhrase);
+                return View("Index", await _context.Hotel.Where(j => j.HotelRating.Equals(X)).ToListAsync());
+            }
             return View("Index", await _context.Hotel.Where(j => j.HotelName.Contains(SearchPhrase)).ToListAsync());
         }
 

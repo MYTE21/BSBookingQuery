@@ -4,6 +4,14 @@
     <div class="col-md-4">
         <form asp-action="ShowHotelSearchResults">
 
+            <label for="SelectedField">Search by:</label>
+            <select id="SelectedField" name="SelectedField">
+                <option value="Id">Id</option>
+                <option value="HotelName" selected>HotelName</option>
+                <option value="HotelLocation">HotelLocation</option>
+                <option value="HotelRating">HotelRating</option>
+            </select>
+
             <div class="form-group">
                 <label for="SearchPhrase" class="control-label"></label>
                 <input name="SearchPhrase" class="form-control" />
